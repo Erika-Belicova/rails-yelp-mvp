@@ -1,0 +1,20 @@
+<p><strong>Reviews</strong></p>
+<ul class="list-group">
+  <% @restaurant.reviews.each do |review| %>
+    <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <li class="list-group-item"><%= review.content %></li>
+      </div>
+      <div class="col-6">
+          <li class="list-group-item"><%= review.rating %></li>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</ul>
+<br>
+
+<%= link_to 'Add Review', new_restaurant_review_path(@restaurant) %>
+
+<%= link_to 'Back', restaurants_path %>
